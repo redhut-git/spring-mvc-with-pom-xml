@@ -24,4 +24,19 @@ public class UserManager {
 	public List<User> getAllUsers() {
 		return dao.getAllUsers();
 	}
+	
+	public boolean saveUser(User user) {
+		dao.saveUser(user);
+		return true;
+	}
+	
+	public boolean updateUser(User user) {
+		dao.updateUser(user);
+		return true;
+	}
+	
+	public boolean deleteUser(User user) {
+		dao.deleteUser(user);
+		return true;
+	}
 }

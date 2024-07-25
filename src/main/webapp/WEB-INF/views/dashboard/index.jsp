@@ -1,20 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <%@ include file="../global/taglib.jsp" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
 </head>
 <body>
-<h1>Welcome: ${message}</h1>
-
-<ul>
-	<c:forEach items="${users}" var="user" varStatus="loop">
-	<c:set var="count">${loop.index + 1}</c:set>
-		<li>${count} ${user.fullName}</li>
-	</c:forEach>
-</ul>
+    <h1>Welcome: ${message}</h1>
+    <c:forEach items="${users}" var="user" varStatus="loop">
+    	<c:set var="count">${loop.index + 1}</c:set>
+    	<div>${count} ${user.fullName} (${user.username})</div>
+    </c:forEach>
 </body>
 </html>

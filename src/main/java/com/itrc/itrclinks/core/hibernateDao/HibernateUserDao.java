@@ -30,4 +30,19 @@ public class HibernateUserDao implements UserDao {
 	public List<User> getAllUsers() {
 		return sf.getCurrentSession().createQuery("FROM User ORDER BY fullName ASC").list();
 	}
+
+
+	public void saveUser(User user) {
+		sf.getCurrentSession().save(user);
+	}
+
+
+	public void updateUser(User user) {
+		sf.getCurrentSession().merge(user);
+	}
+
+
+	public void deleteUser(User user) {
+		sf.getCurrentSession().delete(user);
+	}
 }
